@@ -1,0 +1,16 @@
+version: "3.2"
+services:
+
+  mssql:
+    container_name: CDB02
+    image: microsoft/mssql-server-linux:2017-latest
+    environment:
+      SA_PASSWORD: "SApassAdministratorDB2020"
+      ACCEPT_EULA: "Y"
+    ports:
+      - "1433:1433"
+    volumes:
+      - "/SQLServer/data/cdb02:/var/opt/mssql/data"
+      - "/SQLServer/data/cdb02:/SQLServer/data"
+      - "/SQLServer/log/cdb02:/SQLServer/log"
+      - "/SQLServer/backup/cdb02:/SQLServer/backup"
